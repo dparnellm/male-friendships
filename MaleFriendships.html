@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>How can we improve male friendships?</title>
+  <link rel="stylesheet" type="text/css" href="MaleFriendships.css"/>  
+  <script src="MaleFriendships.js"></script>
+</head>
+
+<body>  
+  <div id="title">
+    <h1>How can we improve male friendships?</h1>
+  </div>
+  
+  <p>Male friendship has operated differently in different times, places, and social contexts.  How do you feel about the nature of male friendships in your context?</p>
+  
+  <h4>Survey:</h4>
+  <form>
+    <label for="age" class="mainLabel">Age</label><br>
+    <input type="number" id="age" name="age" onblur="checkAge()"><span id="ageValidationMessage"></span><br><br>
+
+    <label for="isMale" class="mainLabel">Do you identify as male?</label><br>
+    <input type="radio" id="isMaleYes" name="isMale" value="Yes"><label for="yes">Yes</label>
+    <input type="radio" id="isMaleNo" name="isMale" value="No"><label for="no">No</label><br><br>
+    
+    <label for="maleComment">Optional: If you struggled with the Yes/No options above or would like provide any clarifications or caveats,<br>
+    please feel free to comment below.  You can also use this to share about your experience of gender generally.</label><br>
+    <input type="text" id="maleComment" name="maleComment" maxlength="50" size="100"></input><br><br>
+    
+    <label for="qualities" class="mainLabel">What are qualities you want in a male friend?</label><br>
+    <input type="text" id="qualities" name="qualities" maxlength="50" size="100"></input><br><br>
+    
+    <label for="satisfaction" class="mainLabel">How do you feel about the state of your male friendships?</label><br>
+    <input type="radio" id="notAtAllSatisfied" name="satisfaction" value="Not At All Satisfied"><label for="notAtAllSatisfied">Not At All Satisfied</label>
+    <input type="radio" id="notSoSatisfied" name="satisfaction" value="Not So Satisfied"><label for="notSoSatisfied">Not So Satisfied</label>
+    <input type="radio" id="somewhatSatisfied" name="satisfaction" value="Somewhat Satisfied"><label for="somewhatSatisfied">Somewhat Satisfied</label>
+    <input type="radio" id="verySatisfied" name="satisfaction" value="Very Satisfied"><label for="verySatisfied">Very Satisfied</label>
+    <input type="radio" id="extremelySatisfied" name="satisfaction" value="Extremely Satisfied"><label for="extremelySatisfied">Extremely Satisfied</label><br><br>
+    
+    <label class="mainLabel">When you think about your male friendships, which of these describe your wishes regarding physical touch?</label><br>
+    <label class="mainLabel">Please select at least one, and please select as many statements as apply to you.</label><br>
+    <table>
+      <tr>      
+        <td><input type="checkbox" id="favoriteMemories" name="favoriteMemories"><label for="favoriteMemories">Some of my favorite memories are times of long-lasting physical touch/closeness/affection in male friendship.</label></td>
+        <td><input type="checkbox" id="tooTouchy" name="tooTouchy"><label for="tooTouchy">Men are too touchy with each other in friendships.</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="ache" name="ache"><label for="ache">I ache for more touch with close male friend(s).</label></td>
+        <td><input type="checkbox" id="suffer" name="suffer"><label for="suffer">Men suffer for not being physically tender and affectionate with each other.</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="weird" name="weird"><label for="weird">If a male friend wanted a long hug with me, I would feel weird about it.</label></td>
+        <td><input type="checkbox" id="quick" name="quick"><label for="quick">Quick hugs and handshakes are good enough for me.</label></td>        
+      </tr>      
+      <tr>
+        <td><input type="checkbox" id="shouldnt" name="shouldnt"><label for="shouldnt">Men shouldn't snuggle or hold hands -- it's too weird.</label></td>
+        <td><input type="checkbox" id="perceptions" name="perceptions"><label for="perceptions">I'd love more touch in my male friendships but I'm concerned about how I'd be perceived by others.</label></td>
+      </tr>
+    </table><br>
+    
+    <label for="touchStories" class="mainLabel">Please share your thoughts, feelings, experiences, and stories about touch within male friendship below.</label><br>
+    <textarea id="touchStories" name="touchStories" rows="5" cols="50"></textarea><br><br>
+    
+    <label for="vulnerability" class="mainLabel">How comfortable are you with being emotionally vulnerable with your best male friends, and sharing deep and personal things about yourself with them?</label><br>
+    <input type="radio" id="notAtAllComfortable" name="vulnerability" value="Not At All Comfortable"><label for="notAtAllComfortable">Not At All Comfortable</label>
+    <input type="radio" id="notSoComfortable" name="vulnerability" value="Not So Comfortable"><label for="notSoComfortable">Not So Comfortable</label>
+    <input type="radio" id="somewhatComfortable" name="vulnerability" value="Somewhat Comfortable"><label for="somewhatComfortable">Somewhat Comfortable</label>
+    <input type="radio" id="veryComfortable" name="vulnerability" value="Very Comfortable"><label for="veryComfortable">Very Comfortable</label>
+    <input type="radio" id="extremelyComfortable" name="vulnerability" value="Extremely Comfortable"><label for="extremelyComfortable">Extremely Comfortable</label><br><br>
+    
+    <label for="cultureAndImprovement" class="mainLabel">What do you think about your culture's approach to male friendships and how do you think your culture can improve in this area?</label><br>
+    <textarea id="cultureAndImprovement" name="cultureAndImprovement" rows="5" cols="50"></textarea><br><br>
+    
+    <input type="button" onclick="validateInfo();" value="Validate">
+  </form><br>
+  
+  <h4>Biblical Resources:</h4>
+  
+  <div class="indentForResourcesBlocks">
+    The value of one-on-one friendship and the strength of wider community (<a href="https://www.biblegateway.com/passage/?search=Ecclesiastes%204%3A9-12&version=NIV">Ecclesiastes 4:9-12</a>)<br>
+  
+    Friendship of Jesus and John (<a href="https://www.biblegateway.com/passage/?search=Ecclesiastes%204%3A9-12&version=NIV">John 13:23-25 KJV</a>/NASB/MEV/YLT [<a href="https://answersingenesis.org/education/spurgeon-sermons/2052-on-his-breast/">Spurgeon sermon</a>], 
+    <a href="https://www.biblegateway.com/passage/?search=john+13%3A23-25&version=KJV">19:26</a>, 
+    <a href="https://www.biblegateway.com/passage/?search=john+20%3A2-4&version=KJV">20:2-4</a>, 
+    <a href="https://www.biblegateway.com/passage/?search=john+21%3A7%2C20-21&version=KJV">21:7,20-21</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=rev+1%3A9-18&version=NIV">Rev 1:9-18</a>, 
+    <a href="https://www.biblegateway.com/passage/?search=rev+22%3A20&version=NIV">22:20</a>)<br>
+    
+    Friendship of Jonathan and David (<a href="https://www.biblegateway.com/passage/?search=1+Samuel+17%3A58-20%3A42&version=NIV">1 Samuel 17:58-20:42</a>, 
+    <a href="https://www.biblegateway.com/passage/?search=1+Samuel+23%3A15-18&version=NIV">23:15-18</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=2+Samuel+1%2C+2+Samuel+9&version=NIV">2 Samuel chapters 1 & 9</a>)<br>
+    
+    Dealing with the temptation to make an idol out of our friends (<a href="https://www.biblegateway.com/passage/?search=psalm+146&version=NIV">Psalm 146</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Luke+14%3A26&version=NIV">Luke 14:26</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Deut+13%3A6-8&version=NIV">Deut 13:6-8</a>)<br>
+    
+    Expressing emotion in friendship (<a href="https://www.biblegateway.com/passage/?search=John+11%3A1-3%2C+32-36&version=NIV">John 11:1-3, 32-36</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=2+Tim+1%3A2-4&version=NIV">2 Tim 1:2-4</a>)<br>
+    
+    Raw communication in friendship (<a href="https://www.biblegateway.com/passage/?search=John+6%3A67&version=NIV">John 6:67</a>, 
+    <a href="https://www.biblegateway.com/passage/?search=John+21%3A15-19&version=NIV">21:15-19</a>)<br>
+    
+    The exalted place of friendship & the church family (<a href="https://www.biblegateway.com/passage/?search=John+15%3A12-17&version=NIV">John 15:12-17</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Proverbs+17%3A17%2C+18%3A24&version=NIV">Proverbs 17:17, 18:24</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Matt+12%3A46-50&version=NIV">Matt 12:46-50</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Isaiah+54%3A1-3&version=NIV">Isaiah 54:1-3</a>)<br>
+    
+    What love should or can look like in friendship (<a href="https://www.biblegateway.com/passage/?search=1+Cor+13&version=NIV">1 Cor 13</a>; 
+    <a href="https://www.biblegateway.com/passage/?search=Acts+20%3A35-37&version=NIV">Acts 20:35-37</a>)<br>
+  </div><br>
+  
+  <div class="writtenAndVideoRow">
+    <div class="writtenAndVideoColumns">
+      <h4>Other Written Resources</h4>
+      <div class="indentForResourcesBlocks">
+        <a href="https://www.nytimes.com/2019/05/10/style/modern-love-college-i-love-you-man-.html">Why Can’t Men Say ‘I Love You’ to Each Other? (NY Times)</a><br>
+        <a href="https://www.nytimes.com/2017/12/05/well/family/gender-men-touch.html">The Power of Touch, Especially for Men (NY Times)</a>*<br>
+		*Please note that consent and respect are worth reflecting on as they relate to the topic of touch in friendship.
+      </div>
+    </div>
+    <div class="writtenAndVideoColumns">
+      <h4>Videos/Films</h4>
+      <div class="indentForResourcesBlocks">
+        <a href="https://youtu.be/PEy5mpu98sg">Foreign Masculinity (Spoken Word)</a><br>
+        <a href="https://www.illpushyou.com/">I'll Push You (Documentary)</a><br>
+        <a href="https://en.wikipedia.org/wiki/Munyurangabo">Munyurangabo (Movie)</a><br>
+      </div>
+    </div>
+  </div>
+  
+  <h4>Photography</h4>
+  <div class="indentForResourcesBlocks">
+    <a href="https://www.flickr.com/photos/192777745@N04/galleries/72157718929589024/">Turkey/Greece and Especially the Oil Wrestling Culture</a><br>
+    <a href="https://www.marcleclef.net/projects/emjugaadem---make-do/">Zameen Asmaan Ka Farq by Marc Ohrem-Leclef</a><br>
+    <a href="https://www.instagram.com/theholdinghandsproject/?hl=en">Holding Hands Project by Vincent Dolman</a><br>
+    <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/">Bosom Buddies: A Photo History of Male Affection (Art of Manliness)</a><br>
+  </div><br>  
+  
+  <h4>Feel free to click on the images below for more context or information:</h4>
+  <div class="indentForResourcesBlocks">
+    <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://www.flickr.com/photos/192777745@N04/galleries/72157718929589024/with/20512983462/"><img src="https://live.staticflickr.com/5689/20512983462_81d619cdf2_b.jpg"/></a>
+      </div>    
+      <div class="imageColumn">
+        <a href="https://qz.com/india/1352239/vincent-dolmans-photos-of-indian-men-holding-hands/"><img src="https://cms.qz.com/wp-content/uploads/2018/08/Vincent-Dolman-holding-hands.jpg?quality=75&strip=all&w=1600&h=900"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.flickr.com/photos/192777745@N04/galleries/72157718929589024/with/20512983462/"><img src="https://live.staticflickr.com/8422/7554101166_4513a1621c_h.jpg"/></a>
+      </div>    
+    </div>
+    <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads//2012/07/port2.jpg"/></a>
+      </div>    
+      <div class="imageColumn">
+        <a href="https://qz.com/india/1352239/vincent-dolmans-photos-of-indian-men-holding-hands/"><img src="https://cms.qz.com/wp-content/uploads/2018/08/Holding_Hands_Shot_3_817.jpg?quality=75&strip=all&w=620&h=930&crop=1"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.ignant.com/2021/04/08/this-time-tomorrow-david-van-dartels-stirring-portrait-of-male-friendship-on-a-dutch-island/"><img src="https://www.ignant.com/wp-content/uploads/2021/03/ignant-photography-david-van-dartel-this-time-tomorrow-05-1024x1536.jpg"/></a>
+      </div>
+    </div>
+    <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads/2012/07/male4.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads/2012/07/work2.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads//2012/07/aaport.jpg"/></a>
+      </div>
+    </div> 
+    <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://www.lensculture.com/marc-ohrem-leclef"><img src="https://photos.lensculture.com/original/3bf13926-3582-4c8f-8ba6-c9f6b10b59df.jpg"/></a>
+      </div>    
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads//2012/07/friendssnapshots2.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.lensculture.com/marc-ohrem-leclef"><img src="https://photos.lensculture.com/original/b1193873-5fe9-40b6-9428-82b61946619f.jpg"/></a>
+      </div>
+    </div>
+      <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://twitter.com/i/events/1226928695702474754"><img src="https://pbs.twimg.com/semantic_core_img/1226957559929556992/FCz8ONyJ?format=jpg&name=medium"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.anonymous-project.com/"><img src="https://www.anonymous-project.com/files/photo_file_600.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.flickr.com/photos/192777745@N04/galleries/72157718929589024/with/20512983462/"><img src="https://live.staticflickr.com/5665/19900907093_caf8ac4fe2_b.jpg"/></a>
+      </div>
+    </div>
+    <div class="imageRow">
+      <div class="imageColumn">
+        <a href="https://www.lensculture.com/marc-ohrem-leclef"><img src="https://photos.lensculture.com/original/eb1f09fa-eb96-4913-b576-f4529793af2d.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.artofmanliness.com/articles/bosom-buddies-a-photo-history-of-male-affection/"><img src="https://content.artofmanliness.com/uploads/2012/07/wrk.jpg"/></a>
+      </div>
+      <div class="imageColumn">
+        <a href="https://www.lensculture.com/marc-ohrem-leclef"><img src="https://photos.lensculture.com/original/34a2346a-886c-4d7f-8f29-99ea1cd0b208.jpg"/></a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>
